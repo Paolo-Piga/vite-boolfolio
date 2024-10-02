@@ -4,6 +4,20 @@
       <ul>
         <li v-for="progetto in progettiView" :key="progetto.id">
           {{ progetto.name }}
+
+        </li>
+        
+      </ul>
+      <h3>Tipi di progetti</h3>
+      <ul>
+        <li v-for="(type, index) in types" :key="index">
+          {{ type }}
+        </li>
+      </ul>
+      <h3>Tecnologie</h3>
+      <ul>
+        <li v-for="(tech, index) in allTechnologies" :key="index">
+          {{ tech }}
         </li>
       </ul>
     </div>
@@ -14,7 +28,9 @@
     name: 'ProgettiView',
     data() {
       return {
-        progettiView: []
+        progetti: [],
+        types: [],
+        allTechnologies: []
       };
     },
     created() {
